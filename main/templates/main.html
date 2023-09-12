@@ -1,7 +1,67 @@
-<h1>Welcome To Choco Stock</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome To ChocoStock</title>
+  <style>
+    h1 {
+      font-size: 36px;
+      color: #000000; 
+      text-align: left; 
+    }
 
+    h5 {
+      font-size: 18px;
+      color: #000000;
+    }
 
-<h5>Name: </h5>
-<p>{{ name }}<p>
-<h5>Class: </h5>
-<p>{{ class }}<p>
+    .card {
+      width: 300px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      text-align: justify;
+      display: block;
+      vertical-align: top;
+    }
+
+    .name {
+      font-size: 18px;
+      color: #000000;
+      text-align: center;
+    }
+
+    .attribute {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome To ChocoStock</h1>
+  
+  <h2>Nama Mahasiswa: {{ nama_mahasiswa }}</h2>
+  <h2>Kelas: {{ kelas }}</h2>
+
+  {% for product in items.products %}
+    <div class="card">
+      <div class="name">
+        <h4>{{ product.product_name }}</h4>
+      </div>
+      <h5 class="attribute">Nama:</h5>
+      <p>{{ product.product_name }}</p>
+      
+      <h5 class="attribute">Harga:</h5>
+      <p>{{ product.price }}</p>
+      
+      <h5 class="attribute">Stok:</h5>
+      <p>{{ product.amount }}</p>
+
+      <h5 class="attribute">Description:</h5>
+      <p>{{ product.description }}</p>
+      
+      <h5 class="attribute">Brand:</h5>
+      <p>{{ product.brand }}</p>
+    </div>
+  {% endfor %}
+</body>
+</html>
