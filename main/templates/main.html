@@ -21,7 +21,7 @@
       border-radius: 5px;
       padding: 10px;
       text-align: justify;
-      display: block;
+      display: inline-block;
       vertical-align: top;
     }
 
@@ -39,8 +39,8 @@
 <body>
   <h1>Welcome To ChocoStock</h1>
   
-  <h2>Nama Mahasiswa: {{ nama_mahasiswa }}</h2>
-  <h2>Kelas: {{ kelas }}</h2>
+  <h2>Nama : {{ nama_mahasiswa }}</h2>
+  <h2>Kelas   : {{ kelas }}</h2>
 
   {% for product in items.products %}
     <div class="card">
