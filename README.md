@@ -98,10 +98,10 @@ Perbedaan MVC, MVT, dan MVVM:
 
 
 Referensi:
-https://www.guru99.com/mvc-vs-mvvm.html
-https://levelup.gitconnected.com/mvc-vs-mvp-vs-mvvm-35e0d4b933b4
-https://pbp-fasilkom-ui.github.io/ganjil-2024/
-https://www.geeksforgeeks.org/python-virtual-environment/
+- https://www.guru99.com/mvc-vs-mvvm.html
+- https://levelup.gitconnected.com/mvc-vs-mvp-vs-mvvm-35e0d4b933b4
+- https://pbp-fasilkom-ui.github.io/ganjil-2024/
+- https://www.geeksforgeeks.org/python-virtual-environment/
 
 
 
