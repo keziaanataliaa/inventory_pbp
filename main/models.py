@@ -6,3 +6,4 @@ class Item(models.Model):
     price = models.CharField(max_length=20)  
     description = models.TextField()
     brand = models.CharField(max_length=255)
+

@@ -2,7 +2,138 @@
 
 Link adaptable: https://chocostock.adaptable.app/
 
+## TUGAS 3
+## Apa perbedaan antara form POST dan form GET dalam Django?
+![alt text](tabel_perbedaan_POST_GET.png)
 
+## Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+
+Dalam konteks pengiriman data, XML dan JSON umumnya digunakan untuk mengirim dan menyimpan data, sementara HTML digunakan untuk mengatur dan menampilkan konten di browser. Pemilihan format tergantung pada kebutuhan dan penggunaan spesifik dari data yang akan dikirim atau disimpan. 
+- XML (eXtensible Markup Language):
+    - Tujuan Utama: XML digunakan untuk menyimpan dan mempertukarkan data terstruktur antar sistem. Ini memungkinkan untuk mendefinisikan struktur data khusus sesuai kebutuhan.
+    - Keunggulan: Cocok untuk data yang kompleks dan terstruktur dengan kebutuhan validasi yang ketat. Dapat digunakan dalam berbagai konteks seperti konfigurasi, pertukaran data, dan penyimpanan terstruktur.
+    - Kekurangan: Lebih berat dan kompleks dalam hal sintaksis, memerlukan lebih banyak karakter untuk mendefinisikan elemen dan struktur data. 
+
+- JSON (JavaScript Object Notation):
+    - Tujuan Utama: JSON terutama digunakan untuk pertukaran data di lingkungan yang lebih ringan dan efisien seperti web dan aplikasi seluler. Ini adalah format data ringan yang memanfaatkan sintaksis JavaScript.
+    - Keunggulan: Lebih ringan dan lebih efisien dalam hal ukuran file dan penggunaan bandwidth. Memiliki format yang lebih mudah dibaca oleh manusia dan lebih mudah diproses oleh mesin.
+    - Kekurangan: Tidak mendukung validasi bawaan, membutuhkan pendekatan manual untuk memastikan data sesuai dengan struktur yang diinginkan. 
+    
+- HTML (HyperText Markup Language):
+    - Tujuan Utama: HTML digunakan untuk membuat struktur dan tata letak halaman web, serta menentukan cara konten disajikan di browser.
+    - Keunggulan: Cocok untuk menampilkan konten dan interaksi pengguna di browser. Memiliki kemampuan bawaan untuk menampilkan gambar, video, tautan, formulir, dan elemen UI lainnya.
+    - Kekurangan: Fokus utama pada presentasi dan tata letak, bukan penyimpanan atau pertukaran data terstruktur.
+
+
+## Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+- Kesederhanaan dan Keterbacaan (Simplicity and Readability):
+    JSON menggunakan struktur data yang sederhana dan mudah dipahami oleh manusia. Data disusun dalam format teks yang terorganisir dengan baik, membuatnya mudah untuk dibaca dan diinterpretasikan oleh pengembang dan mesin.
+
+- Kesesuaian dan Interoperabilitas (Compatibility and Interoperability):
+    JSON adalah format yang independen dari bahasa dan platform. Hal ini memungkinkan aplikasi yang ditulis dalam bahasa pemrograman yang berbeda untuk berkomunikasi dan bertukar data dengan mudah tanpa masalah kompatibilitas.
+
+- Kinerja dan Efisiensi (Performance and Efficiency):
+    JSON memiliki ukuran yang kecil dibandingkan dengan format pertukaran data lain seperti XML. Ini mengakibatkan pengiriman dan penerimaan data yang lebih cepat, menghemat waktu dan sumber daya jaringan.
+
+- Keamanan dan Validasi (Security and Validation):
+    JSON memungkinkan penggunaan metode validasi dan sanitasi data untuk memastikan bahwa data yang diterima adalah data yang benar dan aman. Pengguna dapat menerapkan kontrol keamanan tambahan seperti enkripsi untuk melindungi data.
+
+- Fleksibilitas dan Ekstensibilitas (Flexibility and Extensibility):
+    JSON mendukung struktur data yang fleksibel, memungkinkan pengembang untuk menyesuaikan format data sesuai dengan kebutuhan spesifik aplikasi. Jika diperlukan, dapat dengan mudah menambahkan atau mengubah atribut data tanpa mempengaruhi kompatibilitas dengan aplikasi lain.
+
+- Kesesuaian dan Interoperabilitas (Compatibility and Interoperability):
+    JSON kompatibel dengan sebagian besar bahasa pemrograman dan platform. Ini memungkinkan aplikasi yang ditulis dalam bahasa yang berbeda untuk saling berkomunikasi dan bertukar data tanpa mengalami kendala kompatibilitas.
+
+
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+- Membuat input form untuk menambahkan objek model pada app sebelumnya.
+    1. Mengatur Routing dari main/ ke /
+        - Buka berkas urls.py pada folder inventory_pbp.
+        - Ubah path main/ menjadi '' pada urlpatterns.
+        - Simpan perubahan dan jalankan server dengan perintah python manage.py runserver.
+    2. Implementasi Skeleton sebagai Kerangka Views
+        - Buat folder "templates" pada root folder.
+        - Buat berkas base.html dengan kode template dasar yang telah disediakan.
+        - Sesuaikan pengaturan TEMPLATES di berkas settings.py agar base.html terdeteksi sebagai berkas template.
+        - Ubah kode berkas main.html pada direktori main menjadi menggunakan base.html sebagai template utama.
+    3. Membuat Form Input Data dan Menampilkan Data Produk Pada HTML
+        - Buat berkas forms.py pada direktori main untuk membuat struktur form ProductForm.
+        - Buka berkas views.py di folder main dan tambahkan import yang diperlukan.
+        - Tambahkan fungsi create_product untuk menangani form input data produk.
+        - Modifikasi fungsi show_main untuk mengambil semua objek Product.
+        - Tambahkan path URL untuk create_product di berkas urls.py di main.
+        - Buat berkas create_product.html untuk menampilkan form input data produk.
+    4. Menggunakan Form Input Data
+        - Pada halaman utama, tampilkan data produk dalam bentuk tabel.
+        - Tambahkan tombol "Add New Product" yang akan mengarahkan ke halaman form input data pada berkas main.html
+
+
+- Tambahkan 5 fungsi views untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID dan Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2.
+
+    1. Menambahkan data dengan format HTML
+        - Membuat folder templates di dalam direktori main
+        - Di dalam folder templates, buat berkas HTML dan tambahkan kode HTML untuk menampilkan daftar produk.
+
+    2. Mengembalikan Data dalam Bentuk XML
+        - Buka views.py pada folder main.
+        - Tambahkan import HttpResponse dan serializers di bagian paling atas.
+        - Buat fungsi show_xml(request) untuk menampilkan data dalam format XML.
+        - Di dalam fungsi show_xml, ambil semua data dari model Product.
+        - Gunakan serializers.serialize() untuk mengubah data menjadi format XML.
+        - Kembalikan response dengan parameter data hasil serialisasi dan tipe konten "application/xml".
+        - Buka urls.py pada folder main dan impor fungsi yang baru saja dibuat.
+        - Tambahkan path URL untuk mengakses fungsi show_xml.
+
+    3. Mengembalikan Data dalam Bentuk JSON
+        - Buka views.py pada folder main.
+        - Tambahkan fungsi show_json(request) untuk menampilkan data dalam format JSON.
+        - Di dalam fungsi show_json, ambil semua data dari model Product.
+        - Gunakan serializers.serialize() untuk mengubah data menjadi format JSON.
+        - Kembalikan response dengan parameter data hasil serialisasi dan tipe konten "application/json".
+        - Buka urls.py pada folder main dan impor fungsi yang baru saja dibuat.
+        - Tambahkan path URL untuk mengakses fungsi show_json.
+
+    4. Mengembalikan Data Berdasarkan ID dalam Bentuk XML dan JSON
+        - Buka views.py pada folder main.
+        - Tambahkan dua fungsi baru, show_xml_by_id(request, id) dan show_json_by_id(request, id), untuk menampilkan data berdasarkan ID dalam format XML dan JSON.
+        - Di dalam kedua fungsi tersebut, ambil data dari model Product berdasarkan ID.
+        - Gunakan serializers.serialize() untuk mengubah data menjadi format XML atau JSON tergantung pada fungsi yang dipanggil.
+        - Kembalikan response dengan parameter data hasil serialisasi dan tipe konten yang sesuai (XML atau JSON).
+        - Buka urls.py pada folder main dan impor fungsi yang baru saja dibuat.
+        - Tambahkan path URL untuk mengakses fungsi show_xml_by_id dan show_json_by_id dengan menyertakan parameter ID.
+
+
+Referensi:
+- https://docs.djangoproject.com/en/4.2/topics/forms/#:~:text=GET%20and%20POST&text=Django's%20login%20form%20is%20returned,this%20to%20compose%20a%20URL.
+- https://www.w3schools.com/tags/ref_httpmethods.asp
+- https://www.guru99.com/json-vs-xml-difference.html
+- https://www.deltaxml.com/blog/xml/whats-the-relationship-between-xml-json-html-and-the-internet/
+- https://www.linkedin.com/advice/3/what-benefits-drawbacks-using-json-data#:~:text=One%20of%20the%20main%20benefits,data%20format%20for%20web%20applications.
+- https://brandmed.com/blog/development/the-power-of-json-whats-behind-the-popularity
+- https://pbp-fasilkom-ui.github.io/ganjil-2024/docs/tutorial-2 
+
+
+## Screenshot hasil akses URL pada Postman
+
+- HTML
+![alt text](html.png)
+
+- XML
+![alt text](xml.png)
+
+- JSON
+![alt text](json.png)
+
+- XML by ID
+![alt text](xmlbyid.png)
+
+- JSON by ID
+![alt text](jsonbyid.png)
+
+
+
+## TUGAS 2
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)
 
 - Membuat sebuah proyek Django baru.

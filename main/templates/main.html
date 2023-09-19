@@ -1,67 +1,82 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Welcome To ChocoStock</title>
-  <style>
-    h1 {
-      font-size: 36px;
-      color: #000000; 
-      text-align: left; 
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Welcome To ChocoStock</title>
+    <style>
+      h1 {
+        font-size: 36px;
+        color: #000000; 
+        text-align: left; 
+      }
+
+      h5 {
+        font-size: 18px;
+        color: #000000;
+      }
+
+      .name {
+        font-size: 18px;
+        color: #000000;
+        text-align: center;
+      }
+
+      table {
+        border-collapse: collapse;
     }
 
-    h5 {
-      font-size: 18px;
-      color: #000000;
+    th, td {
+        text-align: center;
+        color: #000000;
+        border: 1px solid #000;
     }
+      .attribute {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome To ChocoStock</h1>
+    
+    <h2>Nama : {{ nama_mahasiswa }}</h2>
+    <h2>Kelas   : {{ kelas }}</h2>
 
-    .card {
-      width: 300px;
-      margin: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 10px;
-      text-align: justify;
-      display: inline-block;
-      vertical-align: top;
-    }
+    <h3>Kamu menyimpan {{ jumlah_item }} item pada aplikasi ini</h3>
 
-    .name {
-      font-size: 18px;
-      color: #000000;
-      text-align: center;
-    }
+    <table id="table" class="tabel">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Amount</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Brand</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+      <tr>
+        <td>{{ item.product_name }}</td>
+        <td>{{ item.amount }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.brand }}</td>
+      </tr>
+      {% endfor %}
+    </table>
 
-    .attribute {
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <h1>Welcome To ChocoStock</h1>
-  
-  <h2>Nama : {{ nama_mahasiswa }}</h2>
-  <h2>Kelas   : {{ kelas }}</h2>
+<br />
 
-  {% for product in items.products %}
-    <div class="card">
-      <div class="name">
-        <h4>{{ product.product_name }}</h4>
-      </div>
-      <h5 class="attribute">Nama:</h5>
-      <p>{{ product.product_name }}</p>
-      
-      <h5 class="attribute">Harga:</h5>
-      <p>{{ product.price }}</p>
-      
-      <h5 class="attribute">Stok:</h5>
-      <p>{{ product.amount }}</p>
-
-      <h5 class="attribute">Description:</h5>
-      <p>{{ product.description }}</p>
-      
-      <h5 class="attribute">Brand:</h5>
-      <p>{{ product.brand }}</p>
-    </div>
-  {% endfor %}
-</body>
-</html>
+<a href="{% url 'main:create_product' %}">
+    <button>
+        Add New Product
+    </button>
+</a>
+  </body>
+  </html>
+{% endblock content %}
