@@ -2,6 +2,115 @@
 
 Link adaptable: https://chocostock.adaptable.app/
 
+## TUGAS 4
+
+## Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
+Django UserCreationForm adalah sebuah formulir bawaan (built-in form) yang disediakan oleh kerangka kerja (framework) Django untuk memudahkan pembuatan formulir pendaftaran pengguna (user registration form) dalam aplikasi web. Formulir ini dirancang khusus untuk memfasilitasi proses pendaftaran pengguna baru di situs web Django, sehingga pengembang tidak perlu menulis kode dari awal untuk membuat formulir pendaftaran.
+
+- Kelebihan Django UserCreationForm:
+    - Mudah Digunakan: UserCreationForm telah disiapkan dengan fungsionalitas pendaftaran pengguna yang umum, sehingga memungkinkan pengembang untuk mengintegrasikannya dengan mudah dalam aplikasi Django mereka tanpa memerlukan banyak penyesuaian.
+    - Meminimalisir Pengulangan Kode: Dengan menggunakan UserCreationForm, pengembang dapat menghindari menulis kode dari awal untuk formulir pendaftaran pengguna. Hal ini menghemat waktu dan usaha karena formulir tersebut telah dibangun dengan prinsip-prinsip terbaik dalam desain formulir web.
+    - Keamanan Terintegrasi: Formulir ini sudah memasukkan pengelolaan keamanan dasar seperti validasi input, penanganan kesalahan, dan enkripsi kata sandi. Ini membantu melindungi aplikasi dari serangan keamanan umum yang terkait dengan pendaftaran pengguna.
+
+- Kekurangan Django UserCreationForm:
+    - Keterbatasan Kustomisasi: Meskipun UserCreationForm menyediakan fungsionalitas dasar untuk pendaftaran pengguna, terkadang aplikasi memerlukan penyesuaian khusus yang tidak dapat dicapai dengan formulir ini secara langsung. Dalam kasus-kasus tersebut, pengembang mungkin perlu membuat formulir pendaftaran kustom mereka sendiri.
+    - Tidak Memenuhi Kebutuhan Spesifik: Terkadang, kebutuhan aplikasi dapat sangat spesifik dan tidak dapat dipenuhi sepenuhnya oleh UserCreationForm. Dalam situasi seperti itu, pengembang mungkin perlu menyesuaikan atau memperluas formulir bawaan atau bahkan membuat formulir pendaftaran pengguna sepenuhnya dari awal.
+
+
+## Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+- Perbedaan antara autentikasi dan otorisasi
+![alt text](tabel_perbedaan_autentikasi&otorisasi.png)
+
+- Alasan mengapa keduanya penting:
+    - Keamanan: Autentikasi memastikan bahwa hanya pengguna yang terotorisasi yang memiliki akses ke aplikasi. Otorisasi memastikan bahwa pengguna hanya memiliki akses ke fungsi atau data yang sesuai dengan peran atau izin mereka.
+    - Perlindungan Data Sensitif: Autentikasi memastikan bahwa data sensitif hanya diakses oleh pengguna yang memiliki hak akses. Otorisasi memastikan bahwa pengguna hanya dapat melakukan tindakan tertentu terhadap data tersebut.
+    - Manajemen Pengguna: Autentikasi memungkinkan aplikasi untuk mengidentifikasi dan membedakan pengguna. Otorisasi memungkinkan administrator untuk mengelola hak akses dan peran pengguna.
+    - Pemisahan Tugas: Dengan autentikasi dan otorisasi yang kuat, pengembang dapat memisahkan tugas antara pengguna, administrator, dan pengelola sistem, sehingga meningkatkan keamanan dan manajemen aplikasi.
+
+## Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+- Cookies dalam Konteks Aplikasi Web:
+    Sebuah cookie adalah sepotong data kecil yang disimpan di komputer pengguna saat mengunjungi sebuah situs web. Cookies ini dikeluarkan oleh server web dan disimpan di browser pengguna. Tujuan utama cookies adalah untuk menyimpan informasi terkait sesi pengguna atau preferensi, sehingga situs web dapat mengingat informasi ini pada kunjungan berikutnya. Contoh informasi yang dapat disimpan dalam cookies meliputi preferensi bahasa, detail login, atau item yang ada dalam keranjang belanja. Dalam konteks aplikasi web, cookies memainkan peran penting dalam meningkatkan interaksi antara situs web dan pengguna. Mereka memungkinkan situs web untuk mengenali pengguna secara unik dan menyimpan informasi yang diperlukan untuk memberikan pengalaman yang lebih personal dan sesuai dengan preferensi masing-masing pengguna. Dengan menggunakan cookies, situs web dapat memberikan pengalaman yang lebih mulus dan disesuaikan bagi pengguna, serta membantu menyimpan informasi yang diperlukan untuk berbagai tujuan seperti analisis penggunaan situs, pengiklanan yang disesuaikan, dan lain sebagainya. Namun, pengguna harus diberikan pilihan untuk mengizinkan atau menolak penggunaan cookies, sesuai dengan kebijakan privasi dan regulasi yang berlaku. 
+
+- Bagaimana Django Menggunakan Cookies untuk Mengelola Data Sesi Pengguna
+    Django adalah sebuah kerangka kerja pengembangan web yang populer dan kuat yang memungkinkan pengembang untuk membangun aplikasi web dengan mudah. Django memiliki mekanisme bawaan untuk mengelola data sesi pengguna menggunakan cookie.Ketika pengguna pertama kali mengunjungi situs web yang menggunakan Django, server akan menghasilkan sebuah cookies khusus yang disebut sessionid. Cookies ini kemudian disimpan di browser pengguna. Django menggunakan sessionid untuk mengidentifikasi pengguna secara unik. Saat pengguna melakukan interaksi dengan situs web, Django menyimpan data sesi pengguna di server dan mengaitkannya dengan sessionid yang sesuai. Ini memungkinkan Django untuk menyimpan informasi sesi seperti data login, preferensi, atau halaman yang telah dilihat oleh pengguna. Proses ini memungkinkan Django untuk menyediakan pengalaman yang disesuaikan untuk pengguna yang masuk ke situs web, bahkan ketika mereka berpindah antar halaman atau melakukan tindakan tertentu.
+
+## Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+Penggunaan cookies tidak selalu aman secara default dalam pengembangan web, dan ada risiko potensial yang harus diwaspadai. Berikut adalah beberapa risiko terkait penggunaan cookies:
+
+- Pelanggaran Privasi Pengguna: Cookies dapat digunakan untuk mengumpulkan dan melacak informasi pribadi pengguna tanpa izin mereka. Hal ini dapat mengakibatkan pelanggaran privasi dan dapat menimbulkan masalah hukum.
+
+- Cross-Site Scripting (XSS) Attacks: Cookies yang tidak diatur dengan benar dapat menjadi rentan terhadap serangan XSS. Ini memungkinkan penyerang untuk memodifikasi atau mencuri cookies pengguna, yang dapat digunakan untuk mengakses akun atau informasi sensitif.
+
+- Cross-Site Request Forgery (CSRF) Attacks: Cookies yang digunakan untuk otentikasi pengguna dapat dieksploitasi dalam serangan CSRF, di mana penyerang memaksa pengguna untuk melakukan aksi tertentu tanpa sepengetahuan mereka.
+
+- Session Hijacking atau Session Fixation: Jika cookies sesi tidak diatur dengan benar atau tidak dijamin keamanannya, mereka dapat menjadi rentan terhadap serangan di mana penyerang mencoba mencuri atau menetapkan session ID pengguna.
+
+- Man-in-the-Middle Attacks: Tanpa enkripsi yang cukup, cookies dapat dicegat oleh penyerang dalam serangan Man-in-the-Middle. Ini berarti penyerang dapat membaca atau mengubah informasi cookies saat transit.
+
+- Cookies Theft atau Sniffing: Jika situs web tidak menggunakan protokol HTTPS, cookies dapat dengan mudah dicuri oleh penyerang yang memonitor lalu lintas jaringan.
+
+- Overreliance on Cookies: Terlalu mengandalkan cookies untuk menyimpan informasi klien tanpa keamanan tambahan dapat mengakibatkan kerentanan atau kehilangan data jika cookies hilang atau rusak.
+
+- Third-party Cookies Risks: Cookies dari pihak ketiga dapat digunakan untuk melacak perilaku pengguna di seluruh berbagai situs web, yang dapat menimbulkan risiko privasi yang signifikan.
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+- Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar.
+    1. Registrasi Pengguna:
+        - Pertama, di views.py pada direktori main, fungsi register dibuat. Fungsi ini menggunakan UserCreationForm untuk membuat formulir pendaftaran pengguna. 
+        - Jika metode request adalah POST, formulir akan diisi dengan data dari permintaan dan diverifikasi. Jika formulir valid, data pengguna baru akan disimpan dan pengguna akan diarahkan ke halaman login dengan pesan sukses.
+        - Jika formulir tidak valid, atau jika metode request bukan POST, maka formulir kosong akan disediakan untuk diisi oleh pengguna.
+        - Formulir pendaftaran ini kemudian diintegrasikan dengan template register.html.
+    2. Login Pengguna:
+        - Fungsi login_user di views.py bertanggung jawab untuk memproses permintaan masuk dari pengguna.
+        - Jika metode request adalah POST, pengguna dan kata sandi dari formulir login akan diekstraksi.
+        - Kemudian, fungsi authenticate digunakan untuk memeriksa apakah kombinasi pengguna dan kata sandi valid. Jika valid, pengguna akan diarahkan ke halaman utama dengan pesan sukses. Jika tidak valid, pesan kesalahan akan ditampilkan.
+        - Formulir login ini diintegrasikan dengan template login.html.
+    3. Logout Pengguna:
+        - Fungsi logout_user di views.py bertanggung jawab untuk memproses permintaan keluar dari pengguna.
+        - Saat pengguna memilih untuk keluar, fungsi logout akan menghapus sesi pengguna yang saat ini masuk. Kemudian, pengguna akan diarahkan kembali ke halaman login.
+
+- Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal.
+    1. Buat Akun Pertama:
+        - Buka aplikasi Django Anda.
+        - Kunjungi halaman registrasi dan isi formulir dengan informasi akun pertama.
+        - Setelah pendaftaran berhasil, buka halaman admin Django dan masuk dengan akun admin.
+        - Di bagian "Users", tambahkan dua akun pengguna baru, menggunakan informasi palsu jika diperlukan.
+    2. Buat Akun Kedua:
+        - Logout dari akun admin dan kembali ke halaman registrasi.
+        - Daftar akun kedua dengan informasi yang berbeda.
+        - Setelah pendaftaran berhasil, buka kembali halaman admin dan tambahkan tiga data dummy menggunakan akun kedua.
+
+- Menghubungkan model Item dengan User.
+    1. Tambahkan Impor User Model:
+        - Pada file models.py di direktori main, tambahkan impor untuk model User dari django.contrib.auth.models.
+    2. Tambahkan ForeignKey pada Model Item:
+        - Pada model Item, tambahkan field user dengan menggunakan ForeignKey yang mengacu pada model User.
+    3. Update Fungsi Create Item:
+        - Di file views.py, pada fungsi create_item, setelah formulir valid dan sebelum menyimpan objek, atur field user pada objek Item yang akan disimpan dengan pengguna yang sedang masuk.
+    4. Perbarui Fungsi show_main:
+        - Di file views.py, pada fungsi show_main, ambil hanya item yang terasosiasi dengan pengguna yang sedang login.
+    5. Lakukan Migrasi Model:
+        - Jalankan perintah python manage.py makemigrations untuk membuat file migrasi baru.
+    6. Terapkan Migrasi:
+        Jalankan perintah python manage.py migrate untuk menerapkan perubahan pada model ke basis data.
+
+- Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.
+    1. Menampilkan Informasi Pengguna:
+        - Di dalam fungsi show_main di views.py, tambahkan username pengguna yang sedang login ke dalam konteks.
+        - Di dalam template main.html, tambahkan kode untuk menampilkan pesan selamat datang beserta nama pengguna.
+    2. Menerapkan Cookies Last Login:
+        - Di dalam fungsi login_user di views.py, setelah pengguna berhasil login, atur cookie 'last_login' dengan nilai waktu saat ini.
+        - Di dalam template main.html, tambahkan kode untuk menampilkan informasi last login.
+
+Referensi:
+- https://pbp-fasilkom-ui.github.io/ganjil-2024/docs/tutorial-3
+- https://www.sailpoint.com/identity-library/difference-between-authentication-and-authorization/#:~:text=Authentication%20is%20used%20to%20verify,for%20different%20types%20of%20users.
+- https://data-flair.training/blogs/django-advantages-and-disadvantages/
+- https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Sessions
+- https://www.trendmicro.com/vinfo/us/security/definition/cookies#:~:text=A%20cookie%20is%20a%20piece,returned%20to%20a%20particular%20website.
+- https://www.devoteam.com/expert-view/cybersecurity-cookies/#:~:text=Cookies%20and%20cybercriminals,are%20stored%20in%20the%20browser.
+- https://resources.infosecinstitute.com/topics/general-security/risk-associated-cookies/
+
 ## TUGAS 3
 ## Apa perbedaan antara form POST dan form GET dalam Django?
 ![alt text](tabel_perbedaan_POST_GET.png)
