@@ -105,16 +105,16 @@ Kustomisasi desain pada templat HTML yang telah dibuat pada Tugas 4 dengan mengg
         11. Penutup Blok Konten ({% endblock content %}): Blok konten diakhiri dengan tag {% endblock content %}. Ini menandakan akhir dari konten halaman tambah inventori.
 
 - Kustomisasi halaman daftar inventori menjadi lebih berwarna maupun menggunakan apporach lain seperti menggunakan Card.
-        1. Mewarisi dari Template Dasar (extends 'base.html'): Template ini mewarisi atau memperluas dari template dasar dengan nama 'base.html'. Ini berarti halaman daftar inventori akan mengadopsi struktur dan elemen dari template 'base.html'.
-        2. Kustomisasi Gaya Tampilan (<style>): Dalam bagian <style>, terdapat definisi gaya tampilan dengan menggunakan CSS. Ini termasuk pengaturan warna teks, ukuran font, dan tata letak elemen seperti header, tabel, dan kartu produk.
-        3. Header (.header): Di dalam .header, terdapat pengaturan latar belakang dengan gambar (background-image) dan pengaturan teks berwarna putih (color: #ffffff;).
-        4. Judul Halaman (.header h1): Pengaturan ukuran font dan tata letak teks untuk judul halaman.
-        5. Container Produk (.container mt-4): Container yang berisi daftar produk memiliki jarak atas (mt-4) untuk memberikan ruang di bagian atas.
-        6. Teks Jumlah Item (.container h3): Pengaturan ukuran font, tata letak, dan warna teks.
-        7. Kartu Produk (.card): Kartu produk memiliki latar belakang dengan warna beige dan lebar serta tinggi masing-masing 400px.
-        8. Tombol Aksi Produk: Tombol "Edit", "Hapus", dan tombol tambah/kurangi jumlah produk memiliki kelas bootstrap (btn btn-danger, btn btn-warning, btn btn-info, dll.) untuk memberikan warna dan gaya spesifik.
-        9. Teks Sesi Terakhir Login: Menampilkan teks "Sesi terakhir login" dengan ukuran font dan tata letak yang disesuaikan.
-        10. Tombol Tambah Produk Baru: Tombol "Add New Product" memiliki kelas bootstrap (btn btn-primary) untuk memberikan warna yang berbeda dan tampilan yang menarik.
+    1. Mewarisi dari Template Dasar (extends 'base.html'): Template ini mewarisi atau memperluas dari template dasar dengan nama 'base.html'. Ini berarti halaman daftar inventori akan mengadopsi struktur dan elemen dari template 'base.html'.
+    2. Kustomisasi Gaya Tampilan (<style>): Dalam bagian <style>, terdapat definisi gaya tampilan dengan menggunakan CSS. Ini termasuk pengaturan warna teks, ukuran font, dan tata letak elemen seperti header, tabel, dan kartu produk.
+    3. Header (.header): Di dalam .header, terdapat pengaturan latar belakang dengan gambar (background-image) dan pengaturan teks berwarna putih (color: #ffffff;).
+    4. Judul Halaman (.header h1): Pengaturan ukuran font dan tata letak teks untuk judul halaman.
+    5. Container Produk (.container mt-4): Container yang berisi daftar produk memiliki jarak atas (mt-4) untuk memberikan ruang di bagian atas.
+    6. Teks Jumlah Item (.container h3): Pengaturan ukuran font, tata letak, dan warna teks.
+    7. Kartu Produk (.card): Kartu produk memiliki latar belakang dengan warna beige dan lebar serta tinggi masing-masing 400px.
+    8. Tombol Aksi Produk: Tombol "Edit", "Hapus", dan tombol tambah/kurangi jumlah produk memiliki kelas bootstrap (btn btn-danger, btn btn-warning, btn btn-info, dll.) untuk memberikan warna dan gaya spesifik.
+    9. Teks Sesi Terakhir Login: Menampilkan teks "Sesi terakhir login" dengan ukuran font dan tata letak yang disesuaikan.
+    10. Tombol Tambah Produk Baru: Tombol "Add New Product" memiliki kelas bootstrap (btn btn-primary) untuk memberikan warna yang berbeda dan tampilan yang menarik.
 
 Referensi:
 - https://blog.hubspot.com/website/css-margin-vs-padding
