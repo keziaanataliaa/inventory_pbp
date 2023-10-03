@@ -9,6 +9,7 @@ from main.views import logout_user
 from main.views import add_amount
 from main.views import remove_amount
 from main.views import delete_product
+from main.views import edit_product
 
 app_name = 'main'
 
@@ -25,5 +26,5 @@ urlpatterns = [
     path('add_amount/<int:id>/', add_amount, name='add_amount'),
     path('remove_amount/<int:id>/', remove_amount, name='remove_amount'),
     path('delete_product/<int:id>/', delete_product, name='delete_product'),
-
+    path('edit-product/<int:id>', edit_product, name='edit_product'),
 ]

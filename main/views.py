@@ -21,7 +21,7 @@ from django.db.models import Sum
 @login_required(login_url='/login')
 def show_main(request):
     items = Item.objects.filter(user=request.user)
-    total_amount = Item.objects.filter(user=request.user).aggregate(total_amount=Sum('amount'))['total_amount']
+    total_amount = items.count()
     jumlah_item = total_amount if total_amount is not None else 0 
 
     nama_mahasiswa = "Kezia Natalia Theodora N."
@@ -39,9 +39,9 @@ def show_main(request):
     return render(request, "main.html", context)
 
 def create_product(request):
-    form = ProductForm(request.POST or None)
+    form = ProductForm(request.POST, request.FILES)
 
-    if form.is_valid() and request.method == "POST":
+    if form.is_valid():
         product = form.save(commit=False)
         product.user = request.user
         form.save()
@@ -134,5 +134,18 @@ def delete_product(request, id):
 
     return redirect('main:show_main')
 
+def edit_product(request, id):
+    # Get product berdasarkan ID
+    product = Item.objects.get(pk = id)
 
+    # Set product sebagai instance dari form
+    form = ProductForm(request.POST or None, instance=product)
+
+    if form.is_valid() and request.method == "POST":
+        # Simpan form dan kembali ke halaman awal
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_product.html", context)
 

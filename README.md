@@ -2,6 +2,156 @@
 
 Link adaptable: https://chocostock.adaptable.app/
 
+## TUGAS 5
+## Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+- Universal Selector (*):
+    - Manfaat: Memilih semua elemen di halaman.
+    - Waktu yang tepat untuk Menggunakan: ketika mereset atau menetapkan gaya default untuk semua elemen di halaman.
+    - Contoh:
+        * {
+        margin: 0;
+        padding: 0;
+        }
+- Element Selector (Tag Selector):
+    - Manfaat: Memilih semua elemen dengan tag yang spesifik (misalnya, <div>, <p>, <h1>, dll.).
+    - Waktu yang tepat untuk menggunakan: ketika ingin menerapkan gaya yang sama pada semua elemen dengan tag tertentu.
+    - Contoh:
+        p {
+            font-size: 16px;
+        }
+- Class Selector (.nama-kelas):
+    - Manfaat: Memilih elemen berdasarkan kelas yang diberikan.
+    - Waktu yang tepat untuk menggunakan: ketika ingin menerapkan gaya yang sama pada beberapa elemen atau grup elemen.
+    - Contoh:
+        .btn {
+            background-color: #3498db;
+            color: #fff;
+        }
+- ID Selector (#nama-id):
+    - Manfaat: Memilih elemen dengan ID yang spesifik.
+    - Waktu yang tepat untuk menggunakan: ketika ingin menerapkan gaya atau perilaku unik pada satu elemen tertentu.
+    - Contoh:
+        #header {
+            font-size: 24px;
+        }
+- Descendant Selector (Space):
+    - Manfaat: Memilih elemen yang merupakan anak atau keturunan dari elemen tertentu.
+    - Waktu yang tepat untuk menggunakan: ketika ingin menerapkan gaya pada elemen yang berada di dalam elemen tertentu.
+    - Contoh:
+        article p {
+            line-height: 1.5;
+        }
+- Adjacent Sibling Selector (+):
+    - Manfaat: Memilih elemen yang sejajar (saudara sejajar) dari elemen tertentu.
+    - Waktu yang tepat untuk menggunakan: ketika ingin menerapkan gaya pada elemen yang berada tepat setelah elemen lain dari jenis yang sama.
+    - Contoh:
+        h2 + p {
+            font-weight: bold;
+        }
+- Pseudo-Class Selector (:pseudo-class):
+    - Manfaat: Memilih elemen berdasarkan keadaan atau perilaku tertentu (seperti :hover, :active, dsb.)
+    - Waktu yang tepat untuk menggunakan: ketika ingin menerapkan gaya berdasarkan interaksi pengguna atau keadaan elemen.
+    - Contoh:
+        a:hover {
+            color: #ff5733;
+        }
+
+## Jelaskan HTML5 Tag yang kamu ketahui.
+- <!DOCTYPE html>: Deklarasi/spesifikasi untuk menunjukkan bahwa halaman web menggunakan versi HTML5.
+- <html>: Tag ini menandai awal dan akhir dari dokumen HTML.
+- <head>: Bagian ini berisi informasi mengenai dokumen, seperti judul, karakter set, dan referensi ke file eksternal.
+- <title>: Digunakan di dalam <head> untuk menentukan judul halaman web yang akan ditampilkan di jendela atau tab browser.
+- <meta>: Diperlukan untuk mengatur informasi meta-data seperti karakter set, deskripsi halaman, dan instruksi untuk mesin pencari.
+- <link>: Biasanya digunakan untuk menghubungkan halaman HTML ke file eksternal seperti stylesheet CSS.
+- <script>: Digunakan untuk memasukkan atau merujuk ke skrip JavaScript. Bisa ditempatkan di <head> atau <body>.
+- <body>: Ini adalah tempat utama untuk konten yang akan ditampilkan di halaman web, seperti teks, gambar, video, dll.
+- <h1>, <h2>, ..., <h6>: Tag ini digunakan untuk menandai judul atau heading di halaman web, di mana <h1> adalah yang tertinggi dan <h6> adalah yang terendah.
+- <p>: Digunakan untuk menandai sebuah paragraf teks.
+- <a>: Digunakan untuk membuat tautan atau hyperlink ke halaman atau sumber daya eksternal.
+- <img>: Digunakan untuk menampilkan gambar di halaman web.
+- <ul>, <ol>, <li>: Tag ini digunakan untuk membuat daftar tak terurut (unordered list) dan terurut (ordered list), berserta elemen-elemennya.
+- <div>: Tag ini digunakan untuk mengelompokkan elemen HTML dan menerapkan gaya atau CSS pada kelompok tersebut.
+- <span>: Sama seperti <div>, tetapi digunakan untuk mengelompokkan elemen dalam baris atau sekelompok elemen dalam satu baris.
+- <form>: Digunakan untuk membuat formulir yang dapat mengirim data ke server.
+- <input>: Digunakan dalam formulir untuk mendefinisikan berbagai jenis input seperti teks, kata sandi, kotak centang, dll.
+- <button>: Digunakan untuk membuat tombol di dalam formulir.
+- <textarea>: Digunakan untuk membuat area teks yang lebih besar, seperti kolom komentar.
+- <iframe>: Digunakan untuk menanamkan konten eksternal seperti video, peta, atau halaman web di dalam halaman web.
+- <video> dan <audio>: Digunakan untuk memasukkan dan memutar video dan audio di halaman web.
+- <canvas>: Digunakan untuk menggambar grafik atau membuat animasi menggunakan JavaScript.
+- <section>, <article>, <aside>, <header>, <footer>: Ini adalah elemen blok yang memudahkan untuk mengelompokkan dan memahami struktur halaman web.
+- <nav>: Digunakan untuk menandai area navigasi di halaman web.
+- <main>: Menandai konten utama dari halaman web.
+- <figure> dan <figcaption>: Digunakan untuk menampilkan gambar atau ilustrasi dengan keterangan.
+- <time>: Digunakan untuk menandai informasi waktu atau tanggal.
+- <header> dan <footer>: Digunakan untuk mendefinisikan bagian kepala dan kaki dari halaman atau bagian dari halaman.
+
+
+## Jelaskan perbedaan antara margin dan padding.
+![alt text](tabel_perbedaan_MarginPadding.png)
+
+## Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+![alt text](tabel_perbedaan_Tailwand&Bootstrap.png)
+
+Jadi, pilihan antara Tailwind CSS dan Bootstrap tergantung pada kebutuhan proyek. Tailwind cocok untuk proyek-proyek di mana kontrol tingkat rendah dan desain yang sangat spesifik diperlukan, sementara Bootstrap cocok untuk proyek-proyek yang membutuhkan pembuatan antarmuka pengguna yang cepat dengan menggunakan komponen-komponen yang sudah ada.
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+Kustomisasi desain pada templat HTML yang telah dibuat pada Tugas 4 dengan menggunakan CSS atau CSS framework (seperti Bootstrap, Tailwind, Bulma) dengan ketentuan sebagai berikut
+
+- Kustomisasi halaman login, register, dan tambah inventori semenarik mungkin.
+    - Halaman login:
+        1. Mewarisi dari Template Dasar (extends 'base.html'):Template ini mewarisi atau memperluas dari template dasar dengan nama 'base.html'. Ini berarti halaman login akan mengadopsi struktur dan elemen dari template 'base.html'.
+        2. Mengatur Judul Halaman ({% block meta %}):Di dalam blok meta, judul halaman diatur menjadi "Login". Hal ini memungkinkan untuk menentukan judul halaman spesifik untuk halaman login.
+        3. Kustomisasi Gaya Tampilan ({% block content %}):Di dalam blok content, terdapat penyesuaian tampilan menggunakan CSS. Beberapa penyesuaian termasuk pengaturan latar belakang, warna teks, dan tata letak elemen.
+        4. Mengatur Latar Belakang:Latar belakang halaman diatur menggunakan CSS. Gambar latar belakang diterapkan dengan properti background-image.
+        5. Desain Kotak Login:.login-box mengatur penampilan kotak login. Ini termasuk warna latar belakang, bayangan, dan padding.
+        6. Desain Tombol Login:.login_btn menetapkan tata letak dan penampilan tombol login. Ini termasuk warna latar belakang, teks, dan efek hover.
+        7. Formulir Login:Formulir login terdiri dari dua input (username dan password) serta tombol "Login". Masing-masing elemen diberi class form-control untuk penataan dan penampilan.
+        8. Token CSRF ({% csrf_token %}):Di dalam formulir, terdapat token CSRF untuk keamanan formulir. Ini adalah tindakan yang umum dalam Django untuk mencegah serangan CSRF.
+        9. Pesan Kesalahan ({% if messages %}):Jika terdapat pesan kesalahan (seperti kesalahan login), pesan-pesan tersebut akan ditampilkan dalam bentuk daftar.
+        10. Tautan Pendaftaran:Tautan "Register Now" mengarahkan pengguna ke halaman pendaftaran dengan menggunakan URL yang ditentukan oleh {% url 'main:register' %}.
+        11. Penutup Blok Konten ({% endblock content %}): Blok konten diakhiri dengan tag {% endblock content %}. Ini menandakan akhir dari konten halaman login.
+    - Halaman register:
+        1. Mewarisi dari Template Dasar (extends 'base.html'): Template ini mewarisi atau memperluas dari template dasar dengan nama 'base.html'. Ini berarti halaman registrasi akan mengadopsi struktur dan elemen dari template 'base.html'.
+        2. Mengatur Judul Halaman ({% block meta %}): Di dalam blok meta, judul halaman diatur menjadi "Register". Hal ini memungkinkan untuk menentukan judul halaman spesifik untuk halaman registrasi.
+        3. Kustomisasi Gaya Tampilan ({% block content %}): Di dalam blok content, terdapat penyesuaian tampilan menggunakan CSS. Beberapa penyesuaian termasuk pengaturan latar belakang, warna teks, dan tata letak elemen.
+        4. Mengatur Latar Belakang: Latar belakang halaman diatur menggunakan CSS. Gambar latar belakang diterapkan dengan properti background-image.
+        5. Desain Kotak Registrasi: .register-box mengatur penampilan kotak registrasi. Ini termasuk warna latar belakang, bayangan, dan padding.
+        6. Desain Tombol Registrasi: .register_btn menetapkan tata letak dan penampilan tombol registrasi. Ini termasuk warna latar belakang, teks, dan efek hover.
+        7. Formulir Registrasi:Formulir registrasi diwakili oleh {{ form.as_table }}. Ini adalah cara Django mempresentasikan formulir dalam bentuk tabel.
+        8. Token CSRF ({% csrf_token %}): Di dalam formulir, terdapat token CSRF untuk keamanan formulir. Ini adalah tindakan yang umum dalam Django untuk mencegah serangan CSRF.
+        9. Pesan Kesalahan ({% if messages %}):Jika terdapat pesan kesalahan (seperti kesalahan validasi formulir), pesan-pesan tersebut akan ditampilkan dalam bentuk daftar.
+        10. Penutup Blok Konten ({% endblock content %}): Blok konten diakhiri dengan tag {% endblock content %}. Ini menandakan akhir dari konten halaman registrasi.
+    - Halaman tambah inventori:
+        1. Mewarisi dari Template Dasar (extends 'base.html'): Template ini mewarisi atau memperluas dari template dasar dengan nama 'base.html'. Ini berarti halaman tambah inventori akan mengadopsi struktur dan elemen dari template 'base.html'.
+        2. Mengatur Judul Halaman ({% block meta %}): Di dalam blok meta, judul halaman diatur menjadi "Add New Product". Hal ini memungkinkan untuk menentukan judul halaman spesifik untuk halaman tambah inventori.
+        3. Kustomisasi Gaya Tampilan ({% block content %}): Di dalam blok content, terdapat penyesuaian tampilan menggunakan CSS. Beberapa penyesuaian termasuk pengaturan latar belakang, warna teks, dan tata letak elemen.
+        4. Mengatur Latar Belakang (body): Latar belakang halaman diatur menggunakan CSS. Gambar latar belakang diterapkan dengan properti background-image.
+        5. Container Formulir (.form-container): Ini adalah kotak yang berisi formulir untuk menambahkan produk baru. Background-color: rgba(255, 253, 230, 0.8) memberikan lapisan transparan pada latar belakang untuk membantu teks terbaca.Padding, border-radius, dan box-shadow memberikan tampilan yang terorganisir dan bersih.
+        6. Judul Halaman (.form-container h1): Judul "Add New Product" ditempatkan di tengah dengan menggunakan text-align: center. Warna teks diatur dengan color: #5d2a08.
+        7. Formulir (<form>):Digunakan untuk mengirimkan data produk baru. Metode POST digunakan untuk mengirimkan data ke server. {% csrf_token %} digunakan untuk menyertakan token CSRF untuk keamanan.
+        8. Tabel Formulir (<table>): Formulir direpresentasikan dalam bentuk tabel untuk memudahkan pengelolaan elemen.
+        9. Elemen Formulir (.form-control): Ini adalah kelas untuk elemen formulir seperti input dan textarea. Lebar elemen diatur menjadi 100% dari lebar kontainer untuk memastikan pengguna dapat mengisi formulir dengan baik.
+        10. Tombol "Add Product" (.btn): Tombol ini memungkinkan pengguna untuk menambahkan produk baru ke inventori. Warna latar belakang, teks, dan efek hover diatur untuk meningkatkan interaksi pengguna.
+        11. Penutup Blok Konten ({% endblock content %}): Blok konten diakhiri dengan tag {% endblock content %}. Ini menandakan akhir dari konten halaman tambah inventori.
+
+- Kustomisasi halaman daftar inventori menjadi lebih berwarna maupun menggunakan apporach lain seperti menggunakan Card.
+    1. Mewarisi dari Template Dasar (extends 'base.html'): Template ini mewarisi atau memperluas dari template dasar dengan nama 'base.html'. Ini berarti halaman daftar inventori akan mengadopsi struktur dan elemen dari template 'base.html'.
+    2. Kustomisasi Gaya Tampilan (<style>): Dalam bagian <style>, terdapat definisi gaya tampilan dengan menggunakan CSS. Ini termasuk pengaturan warna teks, ukuran font, dan tata letak elemen seperti header, tabel, dan kartu produk.
+    3. Header (.header): Di dalam .header, terdapat pengaturan latar belakang dengan gambar (background-image) dan pengaturan teks berwarna putih (color: #ffffff;).
+    4. Judul Halaman (.header h1): Pengaturan ukuran font dan tata letak teks untuk judul halaman.
+    5. Container Produk (.container mt-4): Container yang berisi daftar produk memiliki jarak atas (mt-4) untuk memberikan ruang di bagian atas.
+    6. Teks Jumlah Item (.container h3): Pengaturan ukuran font, tata letak, dan warna teks.
+    7. Kartu Produk (.card): Kartu produk memiliki latar belakang dengan warna beige dan lebar serta tinggi masing-masing 400px.
+    8. Tombol Aksi Produk: Tombol "Edit", "Hapus", dan tombol tambah/kurangi jumlah produk memiliki kelas bootstrap (btn btn-danger, btn btn-warning, btn btn-info, dll.) untuk memberikan warna dan gaya spesifik.
+    9. Teks Sesi Terakhir Login: Menampilkan teks "Sesi terakhir login" dengan ukuran font dan tata letak yang disesuaikan.
+    10. Tombol Tambah Produk Baru: Tombol "Add New Product" memiliki kelas bootstrap (btn btn-primary) untuk memberikan warna yang berbeda dan tampilan yang menarik.
+
+Referensi:
+- https://blog.hubspot.com/website/css-margin-vs-padding
+- https://www.javatpoint.com/html-tags
+- https://www.pluralsight.com/guides/understanding-the-purpose-and-use-of-the-selector-in-angular- 
+
 ## TUGAS 4
 
 ## Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?

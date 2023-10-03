@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block meta %}
-    <title>Add New Product</title>
+    <title>Edit Product</title>
 {% endblock meta %}
 
 {% block content %}
@@ -75,7 +75,7 @@
 
 <div class="container">
     <div class="form-container">
-        <h1>Add New Product</h1>
+        <h1>Edit Product</h1>
 
         <form method="POST">
             {% csrf_token %}
@@ -84,7 +84,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input class="btn" type="submit" value="Add Product" />
+                        <input class="btn" type="submit" value="Edit Product" />
                     </td>
                 </tr>
             </table>

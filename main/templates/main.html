@@ -1,8 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-
   <!DOCTYPE html>
   <html>
   <head>
@@ -15,8 +13,9 @@
       }
 
       h5 {
-        font-size: 18px;
+        font-size: 22px;
         color: #000000;
+        text-align: center;
       }
 
       .name {
@@ -37,81 +36,104 @@
       .attribute {
         font-weight: bold;
       }
+
+  body{
+    background-color: bisque;
+  }
+    .header {
+    background-image: url('/media/background.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff; 
+    text-align: center;
+    padding: 100px 0; 
+}
+
+  .header h1 {
+      font-size: 36px;
+      text-align: center;
+      margin: 0;
+  }
+
+  .container h3{
+    font-size: 24px;
+    text-align: center;
+    padding: 20;
+    margin-bottom: 10px;
+  }
+  
+  .card{
+    background-color: beige;
+    width: 400px;
+    height: 400px;
+  }
+  
     </style>
   </head>
   <body>
-    <h1>Welcome To ChocoStock</h1>
-    
-    <h2>Nama : {{ nama_mahasiswa }}</h2>
-    <h2>Kelas   : {{ kelas }}</h2>
-
-    <h3>Kamu menyimpan {{ jumlah_item }} item pada aplikasi ini</h3>
-
-    {% if messages %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Kezia Natalia T. N.</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <a href="{% url 'main:logout' %}">
+                <button class="btn btn-outline-success" type="submit">Logout</button>
+            </a>
+        </div>
+        </div>
+    </nav>
+    </div>
+    <div class="header">
+      <h1>Welcome To ChocoStock</h1>
+    </div>
+  
+    <div class="container mt-4">
+      <h3>Kamu menyimpan {{ jumlah_item }} item pada aplikasi ini</h3>
+  
+      {% if messages %}
         {% for message in messages %}
-            <h5>{{ message }}</h5>
+          <h5>{{ message }}</h5>
         {% endfor %}
-    {% endif %} 
-
-    <table id="table" class="tabel">
-    <thead>
-      <tr>
-        <th>Product Name</th>
-        <th>Amount</th>
-        <th>Price</th>
-        <th>Description</th>
-        <th>Brand</th>
-        <th>Add Amount</th>
-        <th>Remove Amount</th>
-        <th>Delete Product</th>
-        
-      </tr>
-    </thead>
-    <tbody>
-      {% for item in items %}
-      <tr>
-        <td>{{ item.product_name }}</td>
-        <td>{{ item.amount }}</td>
-        <td>{{ item.price }}</td>
-        <td>{{ item.description }}</td>
-        <td>{{ item.brand }}</td>
-        <td> <a href="{% url 'main:remove_amount' item.id %}">
-          <button>
-              Remove
-          </button>
-        </a>
-      </td>
-      <td> <a href="{% url 'main:add_amount' item.id %}">
-        <button>
-            Add
-        </button>
+      {% endif %}
+  
+      <div class="row">
+        {% for item in items %}
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{ item.product_name }}</h5>
+                <div class = "card-image">
+                  <!-- {% if item.image %}
+                  <img src= "{{ item.image.url }}" alt="{{ item.name }}">
+                  {% else %}
+                  <p>Tidak ada gambar tersedia.</p> -->
+              {% endif %}
+                </div>
+                <p class="card-text">Brand: {{ item.brand }}</p>
+                <p class="card-text">Price: {{ item.price }}</p>
+                <p class="card-text">Description: {{ item.description }}</p>
+                <p class="card-text">Amount: 
+                  <a href="{% url 'main:remove_amount' item.id %}" class="btn btn-danger">-</a> {{ item.amount }}
+                  <a href="{% url 'main:add_amount' item.id %}" class="btn btn-success">+</a>
+                </p>
+                <div class="d-flex justify-content-center"></div>
+                  <a href="{% url 'main:delete_product' item.id %}" class="btn btn-warning">Delete</a>
+                  <a href="{% url 'main:edit_product' item.pk %}" class="btn btn-info">Edit</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  
+    <div class="container text-center">
+      <h5>Sesi terakhir login: {{ last_login }}</h5>
+      <br />
+      <a href="{% url 'main:create_product' %}" class="btn btn-primary">
+        Add New Product
       </a>
-    </td>
-      <td> <a href="{% url 'main:delete_product' item.id %}">
-        <button>
-            Delete
-        </button>
-      </a>
-    </td>
-      </tr>
-      {% endfor %}
-    </table>
-
-    <h5>Sesi terakhir login: {{ last_login }}</h5>
-
-    <br />
-
-    <a href="{% url 'main:logout' %}">
-      <button>
-          Logout
-      </button>
-    </a>
-
-    <a href="{% url 'main:create_product' %}">
-        <button>
-            Add New Product
-        </button>
-    </a>
-      </body>
-      </html>
-{% endblock content %}
+    </div>
+  {% endblock content %}
+  
