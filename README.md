@@ -1,7 +1,7 @@
 # inventory_pbp
 
-Link adaptable: https://chocostock.adaptable.app/
-Link PaaS: 
+- Link adaptable: https://chocostock.adaptable.app/
+- Link PaaS: http://kezia-natalia21-tugas.pbp.cs.ui.ac.id/ 
 
 ## TUGAS 6
 
