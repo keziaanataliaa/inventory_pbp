@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseNotFound, HttpResponseRedirect
 from main.forms import ProductForm
 from django.urls import reverse
 from main.models import Item
@@ -17,6 +17,8 @@ from django.urls import reverse
 from django.shortcuts import get_object_or_404, redirect
 from django.contrib import messages
 from django.db.models import Sum
+from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
 
 @login_required(login_url='/login')
 def show_main(request):
@@ -149,3 +151,22 @@ def edit_product(request, id):
     context = {'form': form}
     return render(request, "edit_product.html", context)
 
+def get_product_json(request):
+    product_item = Item.objects.all()
+    return HttpResponse(serializers.serialize('json', product_item))
+
+...
+@csrf_exempt
+def create_ajax(request):
+    print(request.POST)
+    form = ProductForm(request.POST or None)
+
+    if form.is_valid() and request.method == "POST":
+        product = form.save(commit=False)
+        product.user = request.user
+        product.save()
+        print(product)
+
+        return HttpResponse(b"CREATED", status=201)
+
+    return HttpResponseNotFound()
