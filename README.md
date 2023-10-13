@@ -21,6 +21,8 @@ Paradigma "event-driven programming" adalah suatu pendekatan dalam pemrograman y
 
 5. Publikasi-Subskripsi (Publish-Subscribe): Paradigma ini memungkinkan komunikasi antara berbagai bagian program yang mungkin berada di tempat-tempat yang berbeda. Kita dapat mendaftarkan objek atau fungsi untuk menerima pemberitahuan (subscribe) ketika suatu peristiwa terjadi, dan objek tersebut akan diberitahu (publish) saat peristiwa terjadi.
 
+Contoh penerapan pada tugas ini: pada main.html terdapat onclick. Ketika tombol ini diklik (masuk ke dalam Peristiwa), fungsi addProduct() akan dijalankan. Fungsi ini bertugas mengirim data formulir ke server menggunakan AJAX, kemudian memperbarui tampilan produk secara dinamis tanpa memuat ulang halaman. Dengan pendekatan event-driven, aplikasi dapat merespons interaksi pengguna dengan cepat dan interaktif hal tersebut masuk ke dalam Penanganan Peristiwa (Event Handling)
+
 ## Jelaskan penerapan asynchronous programming pada AJAX.
 Asynchronous JavaScript and XML (AJAX) adalah teknik pengembangan web yang memungkinkan pengambilan atau pengiriman data dari atau ke server tanpa harus memuat ulang seluruh halaman web. AJAX memanfaatkan asynchronous programming untuk melakukan operasi ini tanpa mengganggu interaktivitas pengguna. Berikut adalah cara penerapan asynchronous programming pada AJAX:
 - Inisiasi Permintaan: Pertama-tama, AJAX akan membuat "surat" khusus yang akan digunakan untuk meminta data dari server. Surat ini akan berisi semua detail tentang permintaan user.
@@ -76,10 +78,12 @@ Mengubah tugas 5 yang telah dibuat sebelumnya menjadi menggunakan AJAX.
 
 
 Referensi:
-- 
-- 
-
-
+- https://www.mendix.com/blog/asynchronous-vs-synchronous-programming/#:~:text=The%20differences%20between%20asynchronous%20and,multiple%20requests%20to%20a%20server.
+- https://www.trio.dev/blog/synchronous-and-asynchronous
+- https://www.studysmarter.co.uk/explanations/computer-science/computer-programming/event-driven-programming/
+- https://stackoverflow.com/questions/43017576/what-is-the-difference-between-fetch-and-jquery-ajax
+- https://tutorial.techaltum.com/fetch-api.html#:~:text=Fetch%20API%20is%20Promise%20based,Web%20API%20or%20REST%20APIs.
+- https://www.theserverside.com/definition/Ajax-Asynchronous-JavaScript-and-XML#:~:text=The%20'Asynchronous'%20in%20AJAX&text=Here's%20how%20the%20various%20AJAX,web%20server%20in%20the%20background.
 
 ## TUGAS 5
 ## Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
