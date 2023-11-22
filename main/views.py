@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseNotFound, HttpResponseRedirect
+from django.http import HttpResponseNotFound, HttpResponseRedirect, JsonResponse
 from main.forms import ProductForm
 from django.urls import reverse
 from main.models import Item
@@ -19,7 +19,7 @@ from django.contrib import messages
 from django.db.models import Sum
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
-
+import json
 @login_required(login_url='/login')
 def show_main(request):
     items = Item.objects.filter(user=request.user)
@@ -152,7 +152,7 @@ def edit_product(request, id):
     return render(request, "edit_product.html", context)
 
 def get_product_json(request):
-    product_item = Item.objects.all()
+    product_item = Item.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize('json', product_item))
 
 ...
@@ -168,5 +168,24 @@ def create_ajax(request):
         print(product)
 
         return HttpResponse(b"CREATED", status=201)
-
     return HttpResponseNotFound()
+
+@csrf_exempt
+def create_product_flutter(request):
+    if request.method == 'POST':
+        
+        data = json.loads(request.body)
+
+        new_product = Item.objects.create(
+            user = request.user,
+            name = data["name"],
+            amount = int(data["amount"]),
+            price = int(data["price"]),
+            description = data["description"]
+        )
+
+        new_product.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
